@@ -1,0 +1,4 @@
+- hosts: backup
+  become: yes
+  roles:
+    - ssh_keys

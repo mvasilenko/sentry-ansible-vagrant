@@ -44,6 +44,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     backup.vm.box = "ubuntu/xenial64"
     backup.vm.network :private_network, ip: "192.168.33.20"
     backup.vm.hostname = "backup"
+
+    backup.vm.provision "ansible" do |ansible| 
+      ansible.playbook = "backup.yml"
+      ansible.verbose = 'vvv'
+    end 
   end
 
   config.vm.provider "virtualbox" do |vb|

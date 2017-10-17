@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: sentry
   become: yes
   gather_facts: False
   pre_tasks:

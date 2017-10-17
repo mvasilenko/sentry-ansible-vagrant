@@ -1,0 +1,8 @@
+- name: update SSH public keys
+  authorized_key:
+    user: root
+    key: "{{ lookup('pipe','cat id_rsa.pub') }}"
+    state: present
+
+- name: copy SSH private key
+  copy: src=id_rsa dest=/root/id_rsa mode=0600
