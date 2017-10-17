@@ -5,3 +5,4 @@ Customfile
 *.log
 id_rsa*
 vagrant-ssh
+.env

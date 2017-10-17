@@ -39,5 +39,6 @@
     - role: nginx
       nginx_sites: none
     - postgres
+    - backup
     - sentry
 

@@ -1,0 +1,8 @@
+- name: copy backup script
+  copy: src=backup_db.sh dest=/root/backup_db.sh mode=0700
+
+- name: copy SSH private key
+  copy: src=.env dest=/root/.env mode=0600
+  ignore_errors: yes
+
+- cron: name="daily cron" hour="6" job="/root/backup_db.sh"

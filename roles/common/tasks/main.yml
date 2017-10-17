@@ -48,6 +48,7 @@
     - memcached
     - software-properties-common
     - ansible
+    - s3cmd
   when: ansible_os_family == "Debian"
 
 # @development is a groupinstall, see https://coderwall.com/p/k6goya
