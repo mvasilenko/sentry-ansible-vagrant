@@ -3,3 +3,5 @@
 vagrant_ansible_inventory*
 Customfile
 *.log
+id_rsa*
+vagrant-ssh

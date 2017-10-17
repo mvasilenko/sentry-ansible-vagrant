@@ -92,9 +92,7 @@ SERVER_EMAIL = 'EMAIL ADDRESS MAILS SHOULD ORIGINATE FROM' # eg. sentry@mysentry
 * Sending mails is currently only possible through external services like Mailgun.
   Possibly install `postfix` for this purpose.
 * Unlike the [Puppet version](https://github.com/DandyDev/sentry-vagrant), this
-  version does not require any manual steps. The one major drawback is that
-  it's not completely idempotent. If you run it twice, the creation of the
-  superuser will throw an error because it already exists.
+  version does not require any manual steps. 
 * This hasn't been tested on other Providers than VirtualBox yet
 * On CentOS, the firewall is completely closed by default (at least on the box
   I tried it with).

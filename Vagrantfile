@@ -21,6 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     sentry.vm.provider :virtualbox do |provider, override|
       override.vm.box = "ubuntu/xenial64"
       override.vm.network :private_network, ip: "192.168.33.10"
+      override.vm.hostname = "sentry"
     end
 
     sentry.vm.provider :digital_ocean do |provider, override|
@@ -37,6 +38,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       ansible.playbook = "sentry.yml"
       ansible.verbose = 'vvv'
     end 
+  end
+
+  config.vm.define "backup" do |backup|
+    backup.vm.box = "ubuntu/xenial64"
+    backup.vm.network :private_network, ip: "192.168.33.20"
+    backup.vm.hostname = "backup"
   end
 
   config.vm.provider "virtualbox" do |vb|
