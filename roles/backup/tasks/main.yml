@@ -1,8 +1,8 @@
-- name: copy backup script
-  copy: src=backup_db.sh dest=/root/backup_db.sh mode=0700
-
-- name: copy SSH private key
-  copy: src=.env dest=/root/.env mode=0600
-  ignore_errors: yes
+- name: copy runtime env and backup script
+  copy: src={{ item }} dest=/root/{{ item }}
+  with_items:
+    - backup_db.sh
+    - s3cfg
+    - .env
 
 - cron: name="daily cron" hour="6" job="/root/backup_db.sh"
